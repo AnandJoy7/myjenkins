@@ -2,15 +2,15 @@ pipeline {
     agent any 
 
     environment { 
-        GITHUB_CREDENTIALS_ID = 'github-cred'  // GitHub Credentials ID 
-        DOCKERHUB_CREDENTIALS_ID = 'dockerhub-cred'  // DockerHub Credentials ID 
-        DOCKER_IMAGE = 'gowtham1906/mydemoimage:latest'  // Docker image name 
+        GITHUB_CREDENTIALS_ID = 'github-credentials'  // GitHub Credentials ID 
+        DOCKERHUB_CREDENTIALS_ID = 'dockerhub-credentials'  // DockerHub Credentials ID 
+        DOCKER_IMAGE = 'anandjoy7/myjenkinsimage:latest'  // Docker image name 
     } 
 
     stages { 
         stage('Clone Repository') { 
             steps { 
-                git credentialsId: "${env.GITHUB_CREDENTIALS_ID}", url: 'https://github.com/Gowtham1906/Devops.git', branch: 'dev'
+                git credentialsId: "${env.GITHUB_CREDENTIALS_ID}", url: 'https://github.com/AnandJoy7/myjenkins.git', branch: 'main'
             } 
         } 
         stage('Build Docker Image') { 
